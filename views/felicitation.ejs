@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achat Ticket Reussi</title>
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/festivalPage.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@100;200;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="/" class="logo"><i class="icon fa fa-ticket" aria-hidden="true"></i>FestiVale</a>
+        <nav class="navbar">
+                <a class="active" href="/">Home</a>
+                <a href="/#Agenda">Agenda</a>
+                <a href="/#about">About</a>
+        </nav>
+        <div class="icons">
+            <a id="bars"><i class="fa fa-bars" onclick="barAnimation()"></i></a>
+            <a><i class="fa fa-search" id="search"></i></a>
+            <a><i class="fa fa-heart" id="favorite"></i></a>
+            <a><i class="fa fa-shopping-cart" id="shopping-cart"></i></a>
+        </div>
+    </header>
+
+     <section class="info-container">
+        <div class="title">
+            <h1>Felicitation vous avez achetez <%= ticketQuantity %> ticket(s) pour <%=festival.nom_festival%> au prix unitaire de <%=festival.prix_ticket%> DHS</h1>
+        </div>
+        
+
+<script src="/festScript.js"></script>
+</body>
+</html>

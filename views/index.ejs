@@ -1,0 +1,323 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FestiVale</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@100;200;400;700&display=swap" rel="stylesheet">
+</head>
+<body style="overflow-x:hidden">
+<header>
+    <a href="/" class="logo"><i class="icon fa fa-ticket" aria-hidden="true"></i>FestiVale</a>
+    <nav class="navbar">
+            <a class="active" href="/">Home</a>
+            <a href="#Agenda">Agenda</a>
+            <a href="#about">About</a>
+    </nav>
+    <div class="icons">
+        <a id="bars"><i class="fa fa-bars" onclick="barAnimation()"></i></a>
+        <a href="#Agenda"><i class="fa fa-search" id="search"></i></a>
+        <a><i class="fa fa-heart" id="favorite"></i></a>
+        <a><i class="fa fa-shopping-cart" id="shopping-cart"></i></a>
+    </div>
+</header>    
+
+<section class="slider">
+    <div class="container">
+        <div class="box">
+            <a href="/festivals/<%= festivalsSix[0].id_festival %>">ACHETER MAINTENANT</a>
+            <img src="<%= festivalsSix[0].image_festival %>" alt="festival1" />
+        </div>
+        <div class="box">
+            <a href="/festivals/<%= festivalsSix[1].id_festival %>">ACHETER MAINTENANT</a>
+            <img src="<%= festivalsSix[1].image_festival %>" alt="festival2" /></div>
+        <div class="box">
+            <a href="/festivals/<%= festivalsSix[2].id_festival %>">ACHETER MAINTENANT</a>
+            <img src="<%= festivalsSix[2].image_festival %>" alt="festival3" /></div>
+        <div class="box">
+            <a href="/festivals/<%= festivalsSix[3].id_festival %>">ACHETER MAINTENANT</a>
+            <img src="<%= festivalsSix[3].image_festival %>" alt="festival4"/></div>
+        <div class="box">
+            <a href="/festivals/<%= festivalsSix[4].id_festival %>">ACHETER MAINTENANT</a>
+            <img src="<%= festivalsSix[4].image_festival %>"></div>
+        <div class="box">
+            <a href="<%= festivalsSix[5].id_festival %>">ACHETER MAINTENANT</a>
+            <img src="<%= festivalsSix[5].image_festival %>" alt="festival6"></div>
+    </div>
+    <div class="pointer">
+        <ul>
+            <li  id="1" class="selected"></li>
+            <li id="2" ></li>
+            <li id="3" ></li>
+            <li id="4"></li>
+            <li id="5" style="display:none"></li>
+            <li id="6" style="display:none"></li>
+        </ul>
+    </div>
+</section>
+
+<section class="agenda" id="Agenda">
+   <div class="header">
+      <i class="icon fa fa-ticket" aria-hidden="true"></i>
+      <h1 > À ne pas manquer </h1>
+      <p>Agenda exceptionnel</p>
+   </div>
+    <div class="main-search">
+        <form  >
+          <input class="search-bar" id="searchInput" placeholder="Cherchez ce que vous voulez" value=""> </input>
+    </form>
+    </div>
+   <div class="container">
+    
+    <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivals[0].image_festival %>" alt="Festival Mawazine des Rythmes du Monde"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivals[0].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= scenes[0].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivals[0].date %> </p> 
+          <a href="/festivals/<%= festivals[0].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivals[0].prix_ticket %> DH</span>
+          </a>
+      </div>
+    </div>
+
+    <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivals[1].image_festival %>" alt="Festival Mawazine des Rythmes du Monde"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivals[1].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= scenes[1].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%=festivals[1].date %></p> 
+          <a href="/festivals/<%= festivals[1].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivals[1].prix_ticket %> DH</span> </a>
+      </div>
+    </div>
+
+    <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivals[2].image_festival %>" alt="Festival Mawazine des Rythmes du Monde"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivals[2].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= scenes[2].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivals[2].date %> </p> 
+          <a href="/festivals/<%= festivals[2].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivals[2].prix_ticket %> DH</span> </a>
+      </div>
+    </div>
+
+    <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivals[3].image_festival %>" alt="Festival Mawazine des Rythmes du Monde"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivals[3].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= scenes[3].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivals[3].date %> </p> 
+          <a href="/festivals/<%= festivals[3].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivals[3].prix_ticket %> DH</span> </a>
+      </div>
+    </div>
+
+    <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivals[4].image_festival %>" alt="Festival Mawazine des Rythmes du Monde"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivals[4].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= scenes[4].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivals[4].date %> </p> 
+          <a href="/festivals/<%= festivals[4].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivals[4].prix_ticket %> DH</span> </a>
+      </div>
+    </div>
+
+    <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivals[5].image_festival %>" alt="Festival Mawazine des Rythmes du Monde"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivals[5].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= scenes[5].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivals[5].date %> </p> 
+          <a href="/festivals/<%= festivals[5].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivals[5].prix_ticket %> DH</span> </a>
+      </div>
+    </div>
+    <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivals[6].image_festival %>" alt="Festival Mawazine des Rythmes du Monde"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivals[6].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= scenes[6].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivals[6].date %> </p> 
+          <a href="/festivals/<%= festivals[6].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivals[6].prix_ticket %> DH</span> </a>
+      </div>
+    </div>
+
+    <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivals[7].image_festival %>" alt="Festival Mawazine des Rythmes du Monde"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivals[7].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= scenes[7].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivals[7].date %> </p> 
+          <a href="/festivals/<%= festivals[7].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivals[7].prix_ticket %> DH</span> </a>
+      </div>
+    </div>
+
+    <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivals[8].image_festival %>" alt="Festival Mawazine des Rythmes du Monde"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivals[8].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= scenes[8].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivals[8].date %> </p> 
+          <a href="/festivals/<%= festivals[8].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivals[8].prix_ticket %> DH</span> </a>
+      </div>
+    </div>
+
+    <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivals[9].image_festival %>"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivals[9].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= scenes[9].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivals[9].date %> </p> 
+          <a href="/festivals/<%= festivals[9].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivals[9].prix_ticket %> DH</span> </a>
+      </div>
+    </div>
+         <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivals[10].image_festival %>" alt="Festival Mawazine des Rythmes du Monde"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivals[10].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= scenes[10].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivals[10].date %> </p> 
+          <a href="/festivals/<%= festivals[10].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivals[10].prix_ticket %> DH</span> </a>
+      </div>
+    </div>
+         <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivals[11].image_festival %>" alt="Festival Mawazine des Rythmes du Monde"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivals[11].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= scenes[11].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivals[11].date %> </p> 
+          <a href="/festivals/<%= festivals[11].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivals[11].prix_ticket %> DH</span> </a>
+      </div>
+    </div>
+         <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivals[12].image_festival %>" alt="Festival Mawazine des Rythmes du Monde"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivals[12].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= scenes[12].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivals[12].date %> </p> 
+          <a href="/festivals/<%= festivals[12].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivals[12].prix_ticket %> DH</span> </a>
+      </div>
+    </div>
+         <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivals[13].image_festival %>" alt="Festival Mawazine des Rythmes du Monde"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivals[13].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= scenes[13].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivals[13].date %> </p> 
+          <a href="/festivals/<%= festivals[13].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivals[13].prix_ticket %> DH</span> </a>
+      </div>
+    </div>
+         <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivals[14].image_festival %>" alt="Festival Mawazine des Rythmes du Monde"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivals[14].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= scenes[14].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivals[14].date %> </p> 
+          <a href="/festivals/<%= festivals[14].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivals[14].prix_ticket %> DH</span> </a>
+      </div>
+    </div>
+         <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivals[15].image_festival %>" alt="Festival Mawazine des Rythmes du Monde"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivals[15].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= scenes[15].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivals[15].date %> </p> 
+          <a href="/festivals/<%= festivals[15].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivals[15].prix_ticket %> DH</span> </a>
+      </div>
+    </div>
+         <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivals[16].image_festival %>" alt="Festival Mawazine des Rythmes du Monde"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivals[16].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= scenes[16].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivals[16].date %> </p> 
+          <a href="/festivals/<%= festivals[16].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivals[16].prix_ticket %> DH</span> </a>
+      </div>
+    </div>
+         <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivals[17].image_festival %>" alt="Festival Mawazine des Rythmes du Monde"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivals[17].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= scenes[17].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivals[17].date %> </p> 
+          <a href="/festivals/<%= festivals[17].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivals[17].prix_ticket %> DH</span> </a>
+      </div>
+    </div>
+ </div>
+
+</section>
+
+<section class="about" id="about">
+      <h1>About Us</h1>
+    <div class="content">
+      <div><p>
+        Nous sommes un groupe d'étudiants de l'INPT passionnés par le développement et la technologie. 
+        Nous aimons explorer les dernières avancées technologiques et repousser les limites de ce qui est possible.
+        Notre objectif est de créer des solutions innovantes et de relever les défis les plus complexes.
+      <p>Que ce soit dans le développement web, l'intelligence artificielle, l'Internet des objets ou d'autres domaines émergents, 
+        nous nous efforçons d'apprendre, de grandir et de contribuer à la communauté technologique.</p>
+        <p>Rejoignez-nous dans notre aventure passionnante et découvrez avec nous les possibilités infinies de la technologie.</p>
+    </p></div>
+  <div><img src="images/inpt.png"></div>
+    </div>
+</section>
+
+<script src="/script.js"></script>
+</body>
+</html>

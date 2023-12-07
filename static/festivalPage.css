@@ -1,0 +1,563 @@
+:root {
+  --green: rgb(39, 174, 96);
+  --blue: rgb(25, 42, 86);
+  --light-color: rgb(247, 247, 247);
+  --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0);
+  --slide: 0rem;
+  --smaller: .75;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+
+
+
+}
+
+*::selection {
+  background-color: var(--green);
+  color: #fff;
+
+}
+
+section {
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 88%;
+}
+
+body {
+  min-height: 100vh;
+}
+
+
+
+header {
+  width: 100vw;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  z-index: 3;
+}
+
+header .icon {
+  color: var(--green);
+  font-size: 2rem;
+  margin-right: .4rem;
+}
+
+header .logo {
+  color: var(--blue);
+  font-size: 1.7rem;
+  font-weight: 900;
+}
+
+header a {
+  margin: .3rem;
+  padding: .4rem .5rem;
+}
+
+header .navbar a {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--blue);
+}
+
+header .navbar a:hover {
+  border-radius: .5rem;
+  background-color: var(--green);
+  color: white;
+}
+
+
+
+header .navbar .active {
+  border-radius: .5rem;
+  background-color: var(--green);
+  color: white;
+}
+
+.icons a {
+  font-size: 1.2rem;
+  border-radius: 50%;
+  background-color: var(--light-color);
+  cursor: pointer;
+  color: black;
+}
+
+.icons a:hover {
+  background-color: var(--green);
+}
+
+
+#bars {
+  display: none;
+}
+
+.info-container {
+  position: relative;
+  top: 3.5rem;
+}
+
+.info-container .title {
+  font-size: 1.5rem;
+  color: #031a37;
+  padding: 3.5rem;
+  font-weight: 900;
+}
+
+.image-box .image-container img {
+  width: 100%;
+  border-radius: .7rem;
+}
+
+.image-box {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 60% 40%;
+  gap: 2rem;
+  width: 85%;
+  margin: auto;
+
+
+}
+
+
+.image-box .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #031a37;
+  border-radius: .7rem;
+  box-shadow: var(--box-shadow);
+}
+
+
+
+
+
+.box .date {
+  color: white;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+.box .location {
+  color: var(--light-color);
+  font-weight: 300;
+  margin-top: 1.2rem;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.ticket-dispo {
+  color: whitesmoke;
+  margin-top: 1.2rem;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.ticket-dispo span {
+  color: #e66100;
+  font-weight: 600;
+}
+
+.price-container {
+  position: relative;
+}
+
+.prices {
+  width: 80%;
+  background-color: #2C4A6E;
+  margin: auto;
+  color: var(--light-color);
+  padding: .8rem;
+  font-size: 1.2rem;
+  border-radius: .5rem;
+  margin-bottom: .6rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.prices i {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 900;
+  color: var(--green);
+}
+
+.prices-list {
+  width: 80%;
+  list-style: none;
+  background-color: #2C4A6E;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--light-color);
+  font-size: 1.2rem;
+  border-radius: .5rem;
+  position: absolute;
+  display: none;
+}
+
+
+.prices-list li {
+  padding: .8rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.prices-list li:hover {
+  background-color: var(--green);
+}
+
+.prices-list li span {
+  float: right;
+}
+
+.prices-list li:not(:first-child) {
+  border-top: solid .1rem;
+}
+
+
+.quantity input {
+  width: 40%;
+  padding: 1.1rem;
+  border: solid .2rem rgb(76, 100, 160);
+  border-radius: .4rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.quantity button {
+  width: 40%;
+  padding: 1.1rem;
+  background-color: var(--green);
+  color: white;
+  font-weight: 700;
+  border-radius: .4rem;
+  cursor: pointer;
+}
+
+.quantity button:hover {
+  background-color: rgb(38, 162, 105);
+}
+
+
+
+
+.countdown .container {
+  color: var(--light-color);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.countdown p {
+  font-weight: 300;
+  letter-spacing: .125rem;
+  padding-top: 1rem;
+  color: white;
+}
+
+.countdown li {
+  display: inline-block;
+  font-size: 1em;
+  list-style-type: none;
+  padding: 1em;
+  padding-top: 0rem;
+  text-transform: uppercase;
+
+}
+
+.countdown li span {
+  width: 3rem;
+  height: 3rem;
+  display: block;
+  font-size: 1.2rem;
+  border: solid .1rem var(--green);
+  border-radius: 50%;
+  line-height: 3rem;
+  margin: .6rem auto;
+}
+
+
+h2 {
+  height: 3rem;
+  font-size: 2rem;
+  max-width: 40rem;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+
+.description p {
+  max-width: 40rem;
+  margin: auto;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  padding-left: 4rem;
+}
+
+.table {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+
+  border-collapse: collapse;
+}
+
+td {
+  border: solid .1rem;
+  margin-left: 4rem;
+}
+
+th {
+  border: solid .1rem;
+  margin-left: 4rem;
+  padding: 1rem;
+  font-weight: 700;
+}
+
+td:first-child {
+  padding-inline: 1.9rem;
+}
+
+.description ul {
+  list-style: none;
+}
+
+
+.description li {
+  text-align: left;
+  font-size: 1.1rem;
+  padding: 1rem;
+  max-width: 40rem;
+}
+
+.description span {
+  font-weight: 510;
+  margin-right: .5rem;
+}
+
+.media .image-container,
+.sponsor .image-container {
+  margin: auto;
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.media img,
+.sponsor img {
+  max-width: 10rem;
+}
+
+
+
+.other-events {
+  margin-top: 8em;
+}
+
+
+
+.other-events .header i {
+  color: var(--green);
+  font-size: 5rem;
+  padding-top: 2rem;
+}
+
+.other-events .header h1 {
+  color: var(--blue);
+  font-weight: 900;
+}
+
+.other-events .header p {
+  color: black;
+  font-size: .9rem;
+}
+
+.other-events .container img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.other-events .festival {
+  height: 30rem;
+  border: solid .1rem;
+  border-radius: .5rem;
+  box-shadow: 0 .2rem .2rem var(--blue);
+  position: relative;
+  overflow: hidden;
+}
+
+.other-events .info {
+  width: 100%;
+}
+
+.other-events .info .title {
+  font-weight: 700;
+  padding: 1rem;
+  text-align: left;
+  line-height: 1.2em;
+  cursor: pointer;
+}
+
+.info .location {
+  font-size: .9rem;
+  padding: 1rem;
+  text-align: left;
+}
+
+.info .date {
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+}
+
+.info i {
+  color: var(--green);
+  margin-right: .4rem;
+}
+
+.info a {
+  display: block;
+  width: 90%;
+  text-transform: none;
+  padding: .65rem 2rem;
+  background-color: var(--green);
+  color: white;
+  font-weight: 700;
+  border-radius: .5rem;
+  cursor: pointer;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.prix {
+  color: peachpuff;
+  font-weight: 900;
+}
+
+.info a:hover {
+  background-color: var(--blue);
+}
+
+.other-events .container {
+  width: 80%;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 5rem;
+  justify-content: center;
+
+}
+
+
+
+
+@media (min-width: 1800px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+@media (max-width:900px) {
+  html {
+    font-size: 75%;
+  }
+
+  .image-box {
+    display: block;
+  }
+
+  .image-container {
+    width: 100%;
+    margin-bottom: 2.5rem;
+  }
+
+  .box {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 700px) {
+
+  html {
+    font-size: 60%;
+  }
+
+  header .navbar {
+    width: 100%;
+    position: absolute;
+    bottom: -19rem;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    z-index: -1;
+    display: none;
+  }
+
+  header .navbar a {
+    display: block;
+    width: 95%;
+    margin: .7rem auto;
+    background-color: var(--light-color);
+    padding: 1rem;
+    border-radius: .5rem;
+    text-align: left;
+  }
+
+  #bars {
+    display: inline-block;
+    color: black;
+  }
+
+  .fa-bars {
+    transform: rotateZ(180deg);
+    transition: all .4s;
+  }
+
+  .fa-times {
+    transition: all .4s;
+  }
+
+
+  .countdown h1 {
+    font-size: calc(1.5rem * var(--smaller));
+  }
+
+  .countdown li {
+    font-size: calc(1.125rem * var(--smaller));
+  }
+
+  .countdown li span {
+    font-size: calc(3.375rem * var(--smaller));
+  }
+
+  .box {
+    width: 90%;
+  }
+}

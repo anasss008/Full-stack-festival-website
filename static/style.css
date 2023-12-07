@@ -1,0 +1,447 @@
+:root {
+  --green: rgb(39, 174, 96);
+  --blue: rgb(25, 42, 86);
+  --light-color: rgb(247, 247, 247);
+  --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0);
+  --slide: 0rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+*::selection {
+  background-color: var(--green);
+  color: #fff;
+}
+
+html {
+  font-size: 88%;
+}
+
+body {
+  min-height: 100vh;
+}
+
+
+
+header {
+  width: 100vw;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  z-index: 3;
+}
+
+header .icon {
+  color: var(--green);
+  font-size: 2rem;
+  margin-right: .4rem;
+}
+
+header .logo {
+  color: var(--blue);
+  font-size: 1.7rem;
+  font-weight: 900;
+}
+
+header a {
+  margin: .3rem;
+  padding: .4rem .5rem;
+}
+
+
+header .navbar a {
+  font-size: 1.15rem;
+  font-weight: 550;
+  color: var(--blue);
+}
+
+header .navbar a:hover {
+  border-radius: .5rem;
+  background-color: var(--green);
+  color: white;
+}
+
+header .navbar .active {
+  border-radius: .5rem;
+  background-color: var(--green);
+  color: white;
+}
+
+.icons a {
+  color: black;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  background-color: var(--light-color);
+  cursor: pointer;
+}
+
+.icons a:hover {
+  background-color: var(--green);
+}
+
+
+#bars {
+  cursor: pointer;
+  display: none;
+}
+
+
+
+.slider {
+  top: 3.5em;
+  height: 80vh;
+  background: linear-gradient(rgb(125, 232, 170, .6), rgb(39, 174, 96, .6)), url("images/bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.slider .container {
+  width: 200%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  transition: all .5s;
+}
+
+
+
+
+
+.slider::after {
+  content: "";
+  background: linear-gradient(to right, rgb(39, 174, 96), rgb(25, 42, 86), black);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: .5rem;
+}
+
+section .container .box {
+  width: 15.5%;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.container .box a {
+  position: absolute;
+  bottom: 2rem;
+  width: 70%;
+  padding: .7rem;
+  left: 15%;
+  background-color: var(--green);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: .4rem;
+  box-shadow: var(--box-shadow);
+  z-index: 1000;
+  display: none;
+}
+
+@keyframes slide {
+  from {
+    transform: translateY(3rem);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+
+
+.slider div img {
+  width: 100%;
+}
+
+.box:hover a {
+  display: block;
+  animation: slide .3s;
+}
+
+.container a:hover {
+  background-color: var(--blue);
+}
+
+section .pointer ul {
+  display: flex;
+  list-style: none;
+  position: absolute;
+  bottom: .85rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(25, 42, 86, .6);
+  border-radius: .5rem;
+}
+
+section .pointer li {
+  width: .55rem;
+  height: .55rem;
+  border-radius: 50%;
+  margin: .8rem 1rem;
+  background-color: white;
+  border: solid .1rem;
+}
+
+section .pointer .selected {
+  background-color: var(--green);
+}
+
+section .pointer li:hover {
+  background-color: var(--green);
+}
+
+
+.agenda {
+  margin-top: 7.5rem;
+}
+
+
+
+.agenda .header i {
+  color: var(--green);
+  font-size: 6.5rem;
+}
+
+.agenda .header h1 {
+  color: var(--blue);
+  font-size: 2.4rem;
+  font-weight: 900;
+}
+
+.agenda .header p {
+  color: black;
+  font-size: 1rem;
+}
+
+.agenda .container img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.agenda .festival {
+  height: 30rem;
+  border: solid .1rem;
+  border-radius: .5rem;
+  box-shadow: 0 .2rem .2rem var(--blue);
+  position: relative;
+  overflow: hidden;
+}
+
+.agenda .info {
+  width: 100%;
+}
+
+.agenda .info .title {
+  font-weight: 700;
+  padding: 1rem;
+  text-align: left;
+  line-height: 1.2em;
+  cursor: pointer;
+}
+
+.info .location {
+  font-size: .9rem;
+  padding: 1rem;
+  text-align: left;
+}
+
+.info .date {
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+}
+
+.info i {
+  color: var(--green);
+  margin-right: .4rem;
+}
+
+.info a {
+  display: block;
+  width: 90%;
+  text-transform: none;
+  padding: .65rem 2rem;
+  background-color: var(--green);
+  color: white;
+  font-weight: 700;
+  border-radius: .5rem;
+  cursor: pointer;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.prix {
+  color: peachpuff;
+  font-weight: 900;
+}
+
+.info a:hover {
+  background-color: var(--blue);
+}
+
+.agenda .container {
+  width: 80%;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 5rem;
+  justify-content: center;
+
+}
+
+.search-bar {
+  margin: 1.1rem auto;
+  padding: .8rem 1.6rem;
+  width: 30rem;
+  background-color: var(--light-color);
+  border: solid .1rem black;
+  border-radius: 1rem;
+  display: block;
+  background-image: url("images/search-interface-symbol.png");
+  background-repeat: no-repeat;
+  background-size: 1.3rem;
+  background-position: .6rem;
+  text-transform: none;
+}
+
+
+.about {
+  min-height: 90vh;
+  margin-top: 7rem;
+  background: linear-gradient(rgb(125, 232, 170, .6), rgb(39, 174, 96, .6));
+}
+
+.about h1 {
+  color: var(--blue);
+  text-align: center;
+  font-size: 3.6rem;
+  font-weight: 700;
+  padding: 1.5rem;
+}
+
+.about .content {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  gap: 1.1rem;
+  align-items: center;
+}
+
+
+.about p {
+  color: #666666;
+  line-height: 1.7;
+  padding: .3rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.about img {
+  width: 75%;
+}
+
+
+@media (min-width: 1800px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media (max-width:900px) {
+  html {
+    font-size: 75%;
+  }
+
+
+  .slider .container {
+    width: 300%;
+  }
+}
+
+@media (max-width: 700px) {
+
+  html {
+    font-size: 60%;
+  }
+
+  header .navbar {
+    width: 100%;
+    position: absolute;
+    bottom: -19rem;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    z-index: -1;
+    display: none;
+  }
+
+  header .navbar a {
+    display: block;
+    width: 95%;
+    margin: .7rem auto;
+    background-color: var(--light-color);
+    padding: 1rem;
+    border-radius: .5rem;
+    text-align: left;
+  }
+
+  #bars {
+    display: inline-block;
+  }
+
+  .fa-bars {
+    transform: rotateZ(180deg);
+    transition: all .4s;
+  }
+
+  .fa-times {
+    transition: all .4s;
+  }
+
+  .slider .container {
+    width: 600%;
+    overflow: hidden;
+  }
+
+  .slider .container .box {
+    width: 14%;
+  }
+
+  .slider {
+    height: 50vh;
+  }
+
+  section .container .box {
+    width: 10.5%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .agenda .festival {
+    height: 36rem;
+  }
+}

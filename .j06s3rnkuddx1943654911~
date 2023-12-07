@@ -1,0 +1,360 @@
+:root{
+    --green: rgb(39, 174, 96);
+    --blue: rgb(25, 42, 86);
+    --light-color: rgb(247, 247, 247);
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0);
+    --slide: 0rem;
+}
+
+*{
+   margin: 0; padding: 0;
+   box-sizing: border-box;
+   text-decoration: none;
+   text-transform: capitalize;
+   outline: none; border: none;
+   font-family: Arial, Helvetica, sans-serif;
+   text-align: center;
+   font-family: Verdana, Geneva, sans-serif;
+}
+
+*::selection {
+    background-color: var(--green);
+    color: #fff;
+  }
+
+html{
+    font-size: 90%;
+}
+body{
+    min-height: 100vh;
+}
+
+header{
+    width: 100%;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position:fixed;
+    z-index: 3;
+}
+
+header .icon{
+    color: var(--green);
+    font-size: 2rem;
+    margin-right: .4rem;
+}
+
+header .logo{
+   color: var(--blue);
+   font-size: 1.7rem;
+   font-weight: 900;
+}
+
+header a{
+    margin: .3rem;
+    padding: .4rem .5rem;
+}
+
+header .navbar a{
+    font-size: 1.15rem;
+    font-weight: 550;
+    color: var(--blue);
+}
+
+header .navbar a:hover{
+    border-radius: .5rem ;
+    background-color: var(--green);
+    color: white;
+}
+
+header .navbar .active{
+    border-radius: .5rem ;
+    background-color: var(--green);
+    color: white;
+}
+
+.icons a{
+    font-size: 1.2rem;
+    border-radius: 50%;
+    background-color: var(--light-color);
+}
+
+.icons a:hover{
+    background-color: var(--green);
+}
+
+
+#bars{
+    display: none;
+}
+
+
+
+.slider{
+    top: 3.5em;
+    height: 80vh;
+    background: url("images/bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+section .container{
+    width: 150%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transition: all .5s;
+    position: absolute;
+}
+
+
+
+
+
+
+.slider::after{
+    content: "";
+    background: linear-gradient(to right , rgb(39, 174, 96),rgb(25, 42, 86),black);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: .5rem;
+}
+
+section .container .box{
+    width: 15.5%;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.container button{
+    position: absolute;
+    bottom: 2rem;
+    width: 70%;
+    padding: .7rem;
+    left: 15%;
+    background-color: var(--green);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: .4rem;
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
+    display: none;
+}
+
+@keyframes slide{
+    from{
+        transform: translateY(3rem);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+
+  
+.slider div img{
+    width: 100%;
+    box-shadow: var(--box-shadow);
+}
+
+.box:hover button{
+    display: block;
+    animation: slide .3s;
+}
+
+.container button:hover{
+    background-color: var(--blue);
+}
+
+section .pointer ul{
+    display: flex;
+    list-style: none;
+    position: absolute;
+    bottom: .85rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(25, 42, 86, .6);
+    border-radius: .5rem;
+}
+section .pointer li{
+    width: .55rem;
+    height: .55rem;
+    border-radius:50% ;
+    margin: .8rem 1rem;
+    background-color: white;
+    border: solid .1rem;
+}
+
+section .pointer .selected{
+    background-color: var(--green);
+}
+
+section .pointer li:hover{
+    background-color: var(--green);
+}
+
+
+.agenda{
+   margin-top: 4.1rem;
+}
+
+.agenda header{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
+.agenda .header i{
+    color: var(--green);
+    font-size: 4rem;
+}
+.agenda .header h1{
+    color: var(--blue);
+    font-weight: 900;
+}
+
+.agenda .header p{
+    color: black;
+    font-size: .9rem;
+}
+
+.agenda .container img{
+    width: 17rem;
+    cursor:pointer;
+}
+
+.agenda .festival{
+    border: solid .1rem;
+    border-radius: .5rem;
+    box-shadow: 0 .2rem .2rem var(--blue);
+    overflow: hidden;
+}
+
+.agenda .info{
+    width: 17rem;
+}
+
+.agenda .info .title{
+    font-weight: 700;
+    padding: 1rem;
+    text-align: left;
+    line-height: 1.2em;
+    cursor:pointer;
+}
+
+.info .location{
+    font-size: .9rem;
+    padding: 1rem;
+    text-align: left;
+}
+
+.info .date{
+    font-weight: 600;
+    padding: 1rem;
+    text-align: left;
+}
+.info i {
+    color: var(--green);
+    margin-right: .4rem;
+}
+
+.info a{
+    display: block;
+    width: 80%;
+    margin: 1rem auto;
+    padding: .65rem 2rem;
+    background-color: var(--green);
+    color: white;
+    font-weight: 700;
+    border-radius: .5rem;
+    cursor:pointer;
+}
+
+.info a:hover{
+    background-color: var(--blue);
+}
+
+.agenda .container{
+    width: 80%;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill , 17rem);
+    gap: 1.5rem;
+    position: relative;
+
+}
+
+
+@media (min-width: 1800){
+    html{
+        font-size: 100%;
+    }
+}
+
+@media (max-width:900px){
+   html{
+    font-size: 75%;
+   }
+
+   section .container{
+    width: 200%;
+   }
+}
+
+@media (max-width: 700px){
+
+    html{
+        font-size: 60%;
+       }
+    header .navbar{
+        width: 100%;
+        position: absolute;
+        bottom: -25.1rem;
+        background-color: white;
+        box-shadow: var(--box-shadow);
+        z-index: -1;
+        display: none;
+    }
+
+    header .navbar a{
+        display: block;
+        width: 95%;
+        margin: .7rem auto;
+        background-color: var(--light-color);
+        padding: 1rem;
+        border-radius: .5rem;
+        text-align: left;
+    }
+
+    #bars {
+        display: inline-block;
+    }
+
+    .fa-bars{
+        transform: rotateZ(180deg);
+        transition: all .4s;
+    }
+
+    .fa-times{
+        transition: all .4s;
+    }
+    section .container{
+        width: 600%;
+       }
+
+       section .container .box{
+        width: 10.5%;
+        position: relative;
+        overflow: hidden;
+    }
+}

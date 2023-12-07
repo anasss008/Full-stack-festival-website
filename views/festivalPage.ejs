@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= festival.nom_festival %></title>
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/festivalPage.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@100;200;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="/" class="logo"><i class="icon fa fa-ticket" aria-hidden="true"></i>FestiVale</a>
+        <nav class="navbar">
+                <a href="/">Home</a>
+                <a href="/#Agenda">Agenda</a>
+                <a href="/#about">About</a>
+        </nav>
+        <div class="icons">
+            <a id="bars"><i class="fa fa-bars" onclick="barAnimation()"></i></a>
+            <a href="/#Agenda"><i class="fa fa-search" id="search"></i></a>
+            <a><i class="fa fa-heart" id="favorite"></i></a>
+            <a><i class="fa fa-shopping-cart" id="shopping-cart"></i></a>
+        </div>
+    </header>
+
+    <section class="info-container">
+        <div class="title">
+            <h1><%= festival.nom_festival %></h1>
+        </div>
+        <div class="image-box">
+            <div class="image-container"><img src="<%= festival.image_festival %>" alt="" /></div>
+            <div class="box">
+                <h5 class="date" id=""><%= festival.date %></h5>
+                <h5 class="location"> <%= festival.adresse %></h5>
+                <div class="price-container">
+                <div class="prices" onclick="dropDown()"> Choisir un Pass <i class="fa fa-chevron-circle-down"></i></div>
+                <ul class="prices-list">
+                    <li>Silver<span><%= festival.prix_ticket %> DH</span></li>
+                    <li>Gold<span></span></li>
+                    <li>Diamond<span></span></li>
+                </ul>
+            </div>
+                
+                <div class="quantity">
+                  <form action="/achat-ticket" method="POST">
+                    <input type="hidden" name="festivalId" value="<%= festival.id_festival %>">
+                    <input type="number" min="1" max="5" name="ticketQuantity" title="nombre de tickets souhaités" value="1">
+                    <button type="submit">Acheter</button>
+                  </form>
+                </div>
+                <div class="ticket-dispo">Le N° des tickets disponible est : <span><%=ticket[0].ticket_disponible %><span></div>
+                <div class="countdown">
+                    <div class="container">
+                        <p id="headline"> Acheter vos tickets avant </p>
+                        <div id="countdown">
+                          <ul>
+                            <li><span id="days"></span>jours</li>
+                            <li><span id="hours"></span>heures</li>
+                            <li><span id="minutes"></span>Minutes</li>
+                            <li><span id="seconds"></span>Seconds</li>
+                          </ul>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="description">
+            <h2 class="title">Description</h2>
+            <div><p><%= festival.description %>
+            </p></div>
+
+            <h2 class="title"> Informations Supplémentaires </h2>
+        <div class=table><table>
+            <tr>
+                <th>les artistes</th>
+                <th>scène</th>
+            </tr>
+            <tr>
+               <td>
+                <ol>
+                  <% if (artiste.length === 1) { %>
+                  <li><%= artiste[0].nom_artiste %></li>
+                  <% } else { %>
+                  <li><%= artiste[0].nom_artiste %></li>
+                  <li><%= artiste[1].nom_artiste %></li>
+                  <li><%= artiste[2].nom_artiste %></li>
+                  <% } %>
+                </ol>
+               </td>
+                <td>
+                  <ul>
+                   <li><span>Nom: </span><%=festival.nom_scene%></li>
+                   <li><span>capacité: </span><%=festival.capacite%></li>
+                   <li><span>Adresse: </span><%=festival.adresse%></li>
+                  </ul>
+                </td>
+            </tr>
+        
+        </table>
+        </div>
+        </div>
+
+      <div class="media">
+        <h2 class="title">Partenaires média</h2>
+        <div class="image-container">
+          <img src="<%=media[0].logo_media %>">
+          <img src="<%=media[1].logo_media %>">
+          <img src="<%=media[2].logo_media %>">
+          <img src="<%=media[3].logo_media %>">
+          <img src="<%=media[4].logo_media %>">
+        </div>
+      </div>
+  
+      <div class="sponsor">
+        <h2 class="title">cet événement est Sponsorisé par</h2>
+                <div class="image-container">
+          <img src="<%=sponsor[0].logo_sponsor %>">
+          <img src="<%=sponsor[1].logo_sponsor %>">
+          <img src="<%=sponsor[2].logo_sponsor %>">
+          <img src="<%=sponsor[3].logo_sponsor %>">
+          <img src="<%=sponsor[4].logo_sponsor %>">
+          
+        </div>
+      </div>
+    </section>
+
+    <section class="other-events">
+        <div class="header">
+            <i class="icon fa fa-ticket" aria-hidden="true"></i>
+            <h1 > Autres événements </h1>
+            <p>Agenda exceptionnel</p>
+         </div>
+   <div class="container">
+    
+    <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivalsSeven[0].image_festival %>" alt="Festival Mawazine des Rythmes du Monde"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivalsSeven[0].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= festivalsSeven[0].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivalsSeven[0].date %> </p> 
+          <a href="/festivals/<%= festivalsSeven[0].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivalsSeven[0].prix_ticket %></span>
+          </a>
+      </div>
+    </div>
+     <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivalsSeven[1].image_festival %>"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivalsSeven[1].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= festivalsSeven[1].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivalsSeven[1].date %> </p> 
+          <a href="/festivals/<%= festivalsSeven[1].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivalsSeven[1].prix_ticket %></span>
+          </a>
+      </div>
+    </div>
+     <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivalsSeven[2].image_festival %>"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivalsSeven[2].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= festivalsSeven[2].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivalsSeven[2].date %> </p> 
+          <a href="/festivals/<%= festivalsSeven[2].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivalsSeven[2].prix_ticket %></span>
+          </a>
+      </div>
+    </div>
+     <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivalsSeven[3].image_festival %>"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivalsSeven[3].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= festivalsSeven[3].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivalsSeven[3].date %> </p> 
+          <a href="/festivals/<%= festivalsSeven[3].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivalsSeven[3].prix_ticket %></span>
+          </a>
+      </div>
+    </div>
+     <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivalsSeven[4].image_festival %>"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivalsSeven[4].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= festivalsSeven[4].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivalsSeven[4].date %> </p> 
+          <a href="/festivals/<%= festivalsSeven[4].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivalsSeven[4].prix_ticket %></span>
+          </a>
+      </div>
+    </div>
+     <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivalsSeven[5].image_festival %>"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivalsSeven[5].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= festivalsSeven[5].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivalsSeven[5].date %> </p> 
+          <a href="/festivals/<%= festivalsSeven[5].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivalsSeven[5].prix_ticket %></span>
+          </a>
+      </div>
+    </div>
+     <div class="festival" id="">
+      <div class="image-container">
+          <img src="<%= festivalsSeven[6].image_festival %>"/>
+      </div>
+      <div class="info">
+          <h3 class="title"><%= festivalsSeven[6].nom_festival %> </h3>
+          <p class="location"><i class="fa fa-map-marker"></i> <%= festivalsSeven[6].adresse %> </p>
+          <p class="date"><i class="fa fa-clock-o"></i> <%= festivalsSeven[6].date %> </p> 
+          <a href="/festivals/<%= festivalsSeven[6].id_festival %>"> Acheter
+            à partir de <span class="prix"><%= festivalsSeven[6].prix_ticket %></span>
+          </a>
+      </div>
+    </div>
+   </div>
+    </section>
+
+<script src="/festScript.js"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FestiGate</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+</head>
+<body style="overflow-x:hidden">
+<header>
+    <a href="#" class="logo"><i class="icon fa fa-ticket" aria-hidden="true"></i>FestiGate</a>
+    <nav class="navbar">
+            <a class="active" href="#home">home</a>
+            <a href="#review">review</a>
+            <a href="#Agenda">Agenda</a>
+            <a href="#login">login</a>
+            <a href="#register">register</a>
+            <a href="#about">about</a>
+    </nav>
+    <div class="icons">
+        <a id="bars"><i class="fa fa-bars" onclick="barAnimation()"></i></a>
+        <a><i class="fa fa-search" id="search"></i></a>
+        <a><i class="fa fa-heart" id="favorite"></i></a>
+        <a><i class="fa fa-shopping-cart" id="shopping-cart"></i></a>
+    </div>
+</header>    
+
+<section class="slider">
+    <div class="container">
+        <div class="box">
+            <button>ACHETER MAINTENANT</button>
+            <img src="images/les-princesses-du-chaabi-de-retour-a-la-fol-1.avif" alt="festival1" />
+        </div>
+        <div class="box">
+            <button>ACHETER MAINTENANT</button>
+            <img src="images/festival-gnaoua-et-musiques-du-monde-2023-soiree-borj-bab-marrakech-1.avif" alt="festival2" /></div>
+        <div class="box">
+            <button>ACHETER MAINTENANT</button>
+            <img src="images/kabareh-cheikhats-a-la-fol-1.avif" alt="festival3" /></div>
+        <div class="box">
+            <button>ACHETER MAINTENANT</button>
+            <img src="images/mamoun-chante-de-jacques-brel-1.avif" alt="festival4"/></div>
+        <div class="box">
+            <button>ACHETER MAINTENANT</button>
+            <img src="images/concert-electro-samifati-1.avif" alt="festival5"/></div>
+        <div class="box">
+            <button>ACHETER MAINTENANT</button>
+            <img src="images/resist-soel-1.avif" alt="festival6"></div>
+    </div>
+    <div class="pointer">
+        <ul>
+            <li  id="1" class="selected"></li>
+            <li id="2" ></li>
+            <li id="3" ></li>
+            <li id="4" style="display:none"></li>
+            <li id="5" style="display:none"></li>
+            <li id="6" style="display:none"></li>
+        </ul>
+    </div>
+</section>
+
+<section class="agenda" id="Agenda">
+   <div class="header">
+      <i class="icon fa fa-ticket" aria-hidden="true"></i>
+      <h1 > À ne pas manquer </h1>
+      <p>Agenda exceptionnel</p>
+   </div>
+
+   <div class="container">
+    
+      <div class="festival" id="">
+        <div class="image-container">
+            <img src="https://gcdn.imgix.net/articles/RCUt76W5ECd1z2D6Z6zuLzqrxfsHZzGF1hNaeylg.png" alt="Festival Mawazine des Rythmes du Monde"/>
+        </div>
+        <div class="info">
+            <h3 class="title">Festival Mawazine des Rythmes du Monde </h3>
+            <p class="location"><i class="fa fa-map-marker"></i> Avenue Imam Malik, Rabat </p>
+            <p class="date"><i class="fa fa-clock-o"></i> 2023-06-27 </p> 
+            <a href=""> Acheter </a>
+        </div>
+      </div>
+
+      <div class="festival" id="">
+        <div class="image-container">
+            <img src="https://gcdn.imgix.net/articles/RCUt76W5ECd1z2D6Z6zuLzqrxfsHZzGF1hNaeylg.png" alt="Festival Mawazine des Rythmes du Monde"/>
+        </div>
+        <div class="info">
+            <h3 class="title">Festival Mawazine des Rythmes du Monde </h3>
+            <p class="location"><i class="fa fa-map-marker"></i> Avenue Imam Malik, Rabat </p>
+            <p class="date"><i class="fa fa-clock-o"></i> 2023-06-27 </p> 
+            <a href=""> Acheter </a>
+        </div>
+      </div>
+
+      <div class="festival" id="">
+        <div class="image-container">
+            <img src="https://gcdn.imgix.net/articles/RCUt76W5ECd1z2D6Z6zuLzqrxfsHZzGF1hNaeylg.png" alt="Festival Mawazine des Rythmes du Monde"/>
+        </div>
+        <div class="info">
+            <h3 class="title">Festival Mawazine des Rythmes du Monde </h3>
+            <p class="location"><i class="fa fa-map-marker"></i> Avenue Imam Malik, Rabat </p>
+            <p class="date"><i class="fa fa-clock-o"></i> 2023-06-27 </p> 
+            <a href=""> Acheter </a>
+        </div>
+      </div>
+
+      <div class="festival" id="">
+        <div class="image-container">
+            <img src="https://gcdn.imgix.net/articles/RCUt76W5ECd1z2D6Z6zuLzqrxfsHZzGF1hNaeylg.png" alt="Festival Mawazine des Rythmes du Monde"/>
+        </div>
+        <div class="info">
+            <h3 class="title">Festival Mawazine des Rythmes du Monde </h3>
+            <p class="location"><i class="fa fa-map-marker"></i> Avenue Imam Malik, Rabat </p>
+            <p class="date"><i class="fa fa-clock-o"></i> 2023-06-27 </p> 
+            <a href=""> Acheter </a>
+        </div>
+      </div>
+
+      <div class="festival" id="">
+        <div class="image-container">
+            <img src="https://gcdn.imgix.net/articles/RCUt76W5ECd1z2D6Z6zuLzqrxfsHZzGF1hNaeylg.png" alt="Festival Mawazine des Rythmes du Monde"/>
+        </div>
+        <div class="info">
+            <h3 class="title">Festival Mawazine des Rythmes du Monde </h3>
+            <p class="location"><i class="fa fa-map-marker"></i> Avenue Imam Malik, Rabat </p>
+            <p class="date"><i class="fa fa-clock-o"></i> 2023-06-27 </p> 
+            <a href=""> Acheter </a>
+        </div>
+      </div>
+
+      <div class="festival" id="">
+        <div class="image-container">
+            <img src="https://gcdn.imgix.net/articles/RCUt76W5ECd1z2D6Z6zuLzqrxfsHZzGF1hNaeylg.png" alt="Festival Mawazine des Rythmes du Monde"/>
+        </div>
+        <div class="info">
+            <h3 class="title">Festival Mawazine des Rythmes du Monde </h3>
+            <p class="location"><i class="fa fa-map-marker"></i> Avenue Imam Malik, Rabat </p>
+            <p class="date"><i class="fa fa-clock-o"></i> 2023-06-27 </p> 
+            <a href=""> Acheter </a>
+        </div>
+      </div>
+      <div class="festival" id="">
+        <div class="image-container">
+            <img src="https://gcdn.imgix.net/articles/RCUt76W5ECd1z2D6Z6zuLzqrxfsHZzGF1hNaeylg.png" alt="Festival Mawazine des Rythmes du Monde"/>
+        </div>
+        <div class="info">
+            <h3 class="title">Festival Mawazine des Rythmes du Monde </h3>
+            <p class="location"><i class="fa fa-map-marker"></i> Avenue Imam Malik, Rabat </p>
+            <p class="date"><i class="fa fa-clock-o"></i> 2023-06-27 </p> 
+            <a href=""> Acheter </a>
+        </div>
+      </div>
+
+      <div class="festival" id="">
+        <div class="image-container">
+            <img src="https://gcdn.imgix.net/articles/RCUt76W5ECd1z2D6Z6zuLzqrxfsHZzGF1hNaeylg.png" alt="Festival Mawazine des Rythmes du Monde"/>
+        </div>
+        <div class="info">
+            <h3 class="title">Festival Mawazine des Rythmes du Monde </h3>
+            <p class="location"><i class="fa fa-map-marker"></i> Avenue Imam Malik, Rabat </p>
+            <p class="date"><i class="fa fa-clock-o"></i> 2023-06-27 </p> 
+            <a href=""> Acheter </a>
+        </div>
+      </div>
+
+      <div class="festival" id="">
+        <div class="image-container">
+            <img src="https://gcdn.imgix.net/articles/RCUt76W5ECd1z2D6Z6zuLzqrxfsHZzGF1hNaeylg.png" alt="Festival Mawazine des Rythmes du Monde"/>
+        </div>
+        <div class="info">
+            <h3 class="title">Festival Mawazine des Rythmes du Monde </h3>
+            <p class="location"><i class="fa fa-map-marker"></i> Avenue Imam Malik, Rabat </p>
+            <p class="date"><i class="fa fa-clock-o"></i> 2023-06-27 </p> 
+            <a href=""> Acheter </a>
+        </div>
+      </div>
+
+      <div class="festival" id="">
+        <div class="image-container">
+            <img src="https://gcdn.imgix.net/articles/RCUt76W5ECd1z2D6Z6zuLzqrxfsHZzGF1hNaeylg.png" alt="Festival Mawazine des Rythmes du Monde"/>
+        </div>
+        <div class="info">
+            <h3 class="title">Festival Mawazine des Rythmes du Monde </h3>
+            <p class="location"><i class="fa fa-map-marker"></i> Avenue Imam Malik, Rabat </p>
+            <p class="date"><i class="fa fa-clock-o"></i> 2023-06-27 </p> 
+            <a href=""> Acheter </a>
+        </div>
+      </div>
+   </div>
+
+</section>
+
+
+<script src="script.js"></script>
+</body>
+</html>
